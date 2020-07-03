@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+        <title>Beta Frame Changer</title>
+        <link  href="css/style.css" >
+        <style type="text/css" media="all">
+body{
+    display:flex;
+}
+.left{
+    display:grid;
+}
+.right>img{
+    height:250px;
+    width:250px;
+}
+#img1{
+    height:500px;
+    width:500px;
+}
+        </style>
+    </head>
+    <body>
+        <div class = "left">
+        <input type="file" id="upload-file">
+        <label for="upload-file">Choose Image</label>
+        <canvas id = "img1"> </canvas>
+        <canvas id="canvas"></canvas>
+        <button onclick="download_image()">Download</button>
+            <script type="text/javascript" src ={{ url_for('static',filename='js/merge.js') }} > </script>
+        </div>
+        <div class = "right">
+                <img onclick= "myFunction(0);" class="parent" id="child1" src = {{ url_for('static', filename='img/imgfile1.png') }}>
+                <img onclick= "myFunction(1);" class="parent" id="child2" src = {{ url_for('static', filename='img/imgfile2.png') }}>
+                <img onclick= "myFunction(2);" class="parent" id="child3" src = {{ url_for('static', filename='img/imgfile3.png') }}>
+        </div>
+    </body>
+</html>
